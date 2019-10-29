@@ -55,6 +55,8 @@ btn.addEventListener('click', () => {
     const g = geraNum(255)
     const b = geraNum(255)
     pegaBody.style.backgroundColor = 'rgb(' + r + ' , ' + g +' , ' + b + ')'
+
+    //TEMPLATE STRING= `rgb(${r}, ${g}, ${b})`
 })
 
 geraNum = numero => parseInt(Math.random() * numero)

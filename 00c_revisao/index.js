@@ -21,3 +21,36 @@
 // [] usar spread
 // [] callback
 // [] promise
+
+const pegaBody = document.querySelector('body')
+//OU document.getElementByTagName('body) Porém assim retorna um array
+//OU document.body
+const btn = document.getElementById('trocaCor')
+
+// let teste = document.body.button
+// console.log(teste);  Não funciona
+
+pegaBody.style.backgroundColor = 'purple'
+btn.addEventListener('click', mudaBody)
+
+
+class MudaCor {
+    constructor() {
+
+    this.r = this.geraNum(255)
+    this.g = this.geraNum(255)
+    this.b = this.geraNum(255)
+    }
+    geraNum(num) {
+       return parseInt(Math.random() * num)
+    }
+    geraRGB() {
+        return `rgb(${this.r}, ${this.g}, ${this.b})`
+    }
+
+}
+
+function mudaBody() {
+    const mudaC = new MudaCor()
+    pegaBody.style.backgroundColor = mudaC.geraRGB()
+}
