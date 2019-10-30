@@ -13,6 +13,9 @@
 // [x] arrow function
 // [x] template string
 
+// 3. adicinando classe
+// [x] criar classe e chamar
+
 const body = document.body;
 const botao = document.getElementById('trocaCor');
 
