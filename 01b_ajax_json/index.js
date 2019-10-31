@@ -38,9 +38,9 @@
 //     }
 // }
 
-const req = new XMLHttpRequest();
-req.open('GET', url);
-req.send();
+const request = new XMLHttpRequest();
+request.open('GET', url);
+request.send();
 
 // [] iterar sobre o array e mostrar as três imagens usando for()
 // [] iterar sobre o array e mostrar as três imagens usando for...of
