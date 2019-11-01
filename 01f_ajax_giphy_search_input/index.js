@@ -28,11 +28,24 @@ function fazerDepoisDoClick(e) {
             const response = request.response
             //Json.parse(variavel): transforma texto para objeto do js. O parse é quem transforma quando recebe o JSON da variável que colocamos como parâmetro no parenteses
             const json = JSON.parse(response)
-            
+            const arrayData = json.data
 
+            for (let i = 0; i < arrayData.length; i++) {
+                const image = arrayData[i].images.original.url;
+                div.innerHTML += `
+                <img src=${image}>
+               ` 
+            }                   
         } else {
-            console.error('Não foi possível pegar a resposta');
-            
+            const status = request.status
+            const statusMsg = request.statusText
+            console.log('console log normal')            
+            console.error('console log de erro que fica como um erro, vermelhinho' , status, statusMsg )
+            console.warn('existe console warn. Fica amarelinho')
+
+            div.innerHTML = `
+                <h1>${response.status}:${response.statusText} </h1>
+                `
         }
        
     }
